@@ -22,7 +22,7 @@
 <body>
 
   <!--Navigation-->
-  <div th:include="administrador/template_admin.html::header"></div>
+  <div th:insert="~{administrador/template_admin.html::header}"></div>
 
 <!-- Page Content -->
 <div class="container">
@@ -52,11 +52,11 @@
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <td ></td>
-        <td ></td>
-        <td ></td>
-        <td ></td>
+      <tr th:each="p:${productos}">
+        <td th:text="${p.nombre}"></td>
+        <td th:text="${p.description}"></td>
+        <td th:text="${p.cantidad}"></td>
+        <td th:text="${p.precio}"></td>
         <td><a  class="btn btn-warning" href="">Editar</a> </td>
         <td><a  class="btn btn-danger" href="">Eliminar</a> </td>
       </tr>       
@@ -67,7 +67,7 @@
 <!-- /.container -->
 
 <!-- Footer -->
-<div th:include="administrador/template_admin.html::footer"></div>
+<div th:insert="~{administrador/template_admin.html::footer}"></div>
 
 
 <!-- Bootstrap core JavaScript -->
