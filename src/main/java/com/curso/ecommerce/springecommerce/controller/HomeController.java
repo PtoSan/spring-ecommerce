@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RequestParam;
 
 import com.curso.ecommerce.springecommerce.model.DetalleOrden;
 import com.curso.ecommerce.springecommerce.model.Orden;
@@ -125,6 +124,11 @@ public class HomeController {
         model.addAttribute("orden", orden);
 
         return "/usuario/carrito";
+    }
+
+    @GetMapping("/order")
+    public String order() {
+        return "usuario/resumenorden";
     }
 
 
